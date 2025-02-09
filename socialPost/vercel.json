@@ -1,0 +1,18 @@
+{
+    "builds": [
+        {
+            "src": "scocialPost/wsgi.py",
+            "use": "@vercel/python",
+            "config": {
+                "maxLambdaSize": "15mb",
+                "runtime": "Python 3.11.4"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/socialPost/wsgi.py"
+        }
+    ]
+}
